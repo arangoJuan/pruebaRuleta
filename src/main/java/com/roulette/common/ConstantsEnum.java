@@ -1,7 +1,8 @@
 package com.roulette.common;
 
-public enum Constants {
+public enum ConstantsEnum {
 	ROULETTE,
+	BET,
 	OPEN,
 	CLOSE,
 	OK;

@@ -10,4 +10,5 @@ public interface RouletteServiceInterface {
 	public RouletteDto findByIdRoulette(Long idRoulette);
 	public String deleteRoulette(Long idRoulette);
 	public String openRoulette(Long idRoulette);
+	public String closeRoulette(Long idRoulette);
 }

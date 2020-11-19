@@ -1,7 +1,11 @@
 package com.roulette.service;
 
+
+import java.util.List;
+
 import com.roulette.dto.BetDto;
 
 public interface BetServiceInterface {
-	public String performBet(BetDto betDto);
+	public String placeBet(BetDto betDto);
+	public List<BetDto> closeBet(Long idRoulette);
 }

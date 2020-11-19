@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.roulette.common.Constants;
+import com.roulette.common.ConstantsEnum;
 import com.roulette.dto.RouletteDto;
 import com.roulette.repository.RouletteInterface;
 @Service
@@ -17,7 +17,7 @@ public class RouletteServiceImplements implements RouletteServiceInterface {
 	public Long createRoulete() {
 		RouletteDto rouletteDto = new RouletteDto();
 		rouletteDto.setIdRoulette(getNextIdRoulette());
-		rouletteDto.setState(Constants.CLOSE.toString());
+		rouletteDto.setState(ConstantsEnum.CLOSE.toString());
 		
 		return rouletteInterface.createRoulete(rouletteDto);
 	}
@@ -41,7 +41,15 @@ public class RouletteServiceImplements implements RouletteServiceInterface {
 	public String openRoulette(Long idRoulette) {
 		RouletteDto rouletteDto = new RouletteDto();
 		rouletteDto.setIdRoulette(idRoulette);
-		rouletteDto.setState(Constants.OPEN.toString());
+		rouletteDto.setState(ConstantsEnum.OPEN.toString());
+		
+		return rouletteInterface.openRoulette(rouletteDto);
+	}
+	@Override
+	public String closeRoulette(Long idRoulette) {
+		RouletteDto rouletteDto = new RouletteDto();
+		rouletteDto.setIdRoulette(idRoulette);
+		rouletteDto.setState(ConstantsEnum.CLOSE.toString());
 		
 		return rouletteInterface.openRoulette(rouletteDto);
 	}
